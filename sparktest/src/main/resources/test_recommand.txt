@@ -1,0 +1,22 @@
+EgoNode: G
+
+EgoNode: B
+
+EgoNode: A
+
+EgoNode: I
+
+EgoNode: K
+
+EgoNode: J
+
+EgoNode: H
+
+EgoNode: C
+
+EgoNode: E
+
+EgoNode: F
+
+EgoNode: D
+

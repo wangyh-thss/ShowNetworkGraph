@@ -80,7 +80,7 @@ $(function() {
             if (line.startsWith('(')) {
                 var nodePairs = line.split('),');
                 // lenList.push(nodePairs.length);
-                if (nodePairs.length != 67) {
+                if (nodePairs.length != 384) {
                     continue;
                 }
                 var egoEdges = [];

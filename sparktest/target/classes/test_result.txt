@@ -1,0 +1,23 @@
+program use time: 3395s
+EgoNode: G
+(E, G),(F, G),
+EgoNode: B
+(B, C),(A, B),
+EgoNode: A
+(A, B),(A, I),(A, D),(A, H),
+EgoNode: I
+(I, J),(I, K),(A, I),
+EgoNode: K
+(I, K),
+EgoNode: J
+(I, J),
+EgoNode: H
+(A, H),(E, H),
+EgoNode: C
+(B, C),
+EgoNode: E
+(E, H),(D, E),(E, G),
+EgoNode: F
+(D, F),(F, G),
+EgoNode: D
+(A, D),(D, E),(D, F),

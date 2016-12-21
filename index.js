@@ -80,7 +80,7 @@ $(function() {
             if (line.startsWith('(')) {
                 var nodePairs = line.split('),');
                 // lenList.push(nodePairs.length);
-                if (nodePairs.length != 66) {
+                if (nodePairs.length != 67) {
                     continue;
                 }
                 var egoEdges = [];
@@ -122,8 +122,8 @@ $(function() {
                 category: category,
                 name: nid,
                 symbolSize: computeNodeSize(nid),
-                x: getRandom(1440),
-                y: getRandom(780),
+                x: getRandom(myChart.getWidth()),
+                y: getRandom(myChart.getHeight()),
                 itemStyle: {
                     normal: {
                         color: getRandomColor()

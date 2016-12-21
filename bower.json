@@ -1,0 +1,10 @@
+{
+  "name": "Graph Test",
+  "description": "A test for showing graph",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "echarts": "^3.3.0",
+    "jquery": "*"
+  }
+}

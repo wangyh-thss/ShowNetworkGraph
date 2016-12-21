@@ -27,7 +27,7 @@ $(function() {
         if (!egoNodeSize[nid]) {
             return 5;
         }
-        return 10 + egoNodeSize[nid] / 10;
+        return 10 + Math.log(egoNodeSize[nid]);
     }
 
     var edgeHash = function(source, target) {
@@ -80,7 +80,7 @@ $(function() {
             if (line.startsWith('(')) {
                 var nodePairs = line.split('),');
                 // lenList.push(nodePairs.length);
-                if (nodePairs.length != 3) {
+                if (nodePairs.length != 66) {
                     continue;
                 }
                 var egoEdges = [];
@@ -93,9 +93,14 @@ $(function() {
                     var target = matchResult[2];
                     nodesDict[source] = nodesDict[source] || 1;
                     nodesDict[target] = nodesDict[target] || 1;
+                    var type = 0;
+                    if (source == tempEgoNode || target == tempEgoNode) {
+                        type = 1;
+                    }
                     edges.push({
                         source: source,
-                        target: target
+                        target: target,
+                        type: type
                     });
                     var key = edgeHash(source, target);
                     edgeIndex[key] = edgesCount;
@@ -140,11 +145,18 @@ $(function() {
             boldEdges = [];
             for (var edgeKey of egoNets[nid]) {
                 var index = edgeIndex[edgeKey];
-                edges[index] = $.extend(edges[index], {
+                var edgeObj = edges[index];
+                var color = 'blue';
+                var width = 2;
+                if (edgeObj.type == 0) {
+                    color = 'red';
+                    width = 5;
+                }
+                edges[index] = $.extend(edgeObj, {
                     lineStyle: {
                         normal: {
-                            width: 5,
-                            color: 'red'
+                            width: width,
+                            color: color
                         }
                     }
                 });
